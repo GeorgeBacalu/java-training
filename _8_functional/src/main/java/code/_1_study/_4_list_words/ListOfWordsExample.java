@@ -7,6 +7,7 @@ import java.util.List;
 public class ListOfWordsExample {
     public static void main(String[] args) {
         List<String> words = new ArrayList<>(Arrays.asList("hello", "java", "yay", "cat"));
+        // concatenare a cuvintelor mai scurte de 4 caractere, scrise cu majuscule si distincte
         String longWord = words.stream()
                 .filter(w -> w.length() < 4)
                 .map(String::toUpperCase)

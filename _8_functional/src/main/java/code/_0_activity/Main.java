@@ -31,7 +31,7 @@ public class Main {
     private static void getHighestScoreV2(List<Student> students) {
         double highestScore = 0.0;
         for (Student s : students) {
-            if (s.getGradYear() == 2011 || s.firstName.startsWith("A")) {
+            if (s.getGradYear() == 2011 || s.getFirstName().startsWith("A")) {
                 if (s.getScore() > highestScore) {
                     highestScore = s.getScore();
                 }
@@ -43,6 +43,7 @@ public class Main {
     private static void getHighestScoreV3(List<Student> students) {
         double highestScore = students.stream()
                 .filter(new Predicate<Student>() {
+                    @Override
                     public boolean test(Student s) {
                         return s.getGradYear() == 2011;
                     }
@@ -60,8 +61,8 @@ public class Main {
 
     private static void getHighestScoreV4(List<Student> students) {
         double highestScore = students.stream()
-                .filter((Student s) -> s.getGradYear() == 2011)
-                .map((Student s) -> s.getScore())
+                .filter(s -> s.getGradYear() == 2011)
+                .map(s -> s.getScore())
                 .max(Student.byScore).get();
         System.out.println(highestScore);
     }

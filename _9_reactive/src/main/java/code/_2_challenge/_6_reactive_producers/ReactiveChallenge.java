@@ -1,7 +1,9 @@
 package code._2_challenge._6_reactive_producers;
 
+import code._2_challenge._6_reactive_producers.reactor.NetflixUsingReactor;
 import code._2_challenge._6_reactive_producers.vanilla.NetflixVanilla;
-//import reactor.core.publisher.TopicProcessor;
+import reactor.core.publisher.DirectProcessor;
+// import reactor.core.publisher.TopicProcessor;
 
 public class ReactiveChallenge {
     public static void main(String[] args) throws InterruptedException {
@@ -9,11 +11,14 @@ public class ReactiveChallenge {
 
         // same as vanilla
         // has no history; directly calls the observer::receiveNotification method for each observer
+        // DirectProcessor este preluat din libraria reactor si implementeaza design pattern-ul Factory
+        // DirectProcessor.create() in loc de new DirectProcessor pentru ca are constructor virtual
         // Observed<String> netflix = new NetflixUsingReactor<>(DirectProcessor.create());
 
         // same as vanilla
         // a thread pool will be used and each observer will receive notification in a different thread then Main-Thread
-        //Observed<String> netflix = new NetflixUsingReactor<>(TopicProcessor.create());
+        // TopicProcessor are istoric si, in momentul in care un nou utilizator s-a subsris, ii trimite notificari cu toate filmele aparute anterior
+        // Observed<String> netflix = new NetflixUsingReactor<>(TopicProcessor.create());
 
         // has history; queue size has default size of 256;
         // queue can be bounded or unbounded; .create(params) can set that

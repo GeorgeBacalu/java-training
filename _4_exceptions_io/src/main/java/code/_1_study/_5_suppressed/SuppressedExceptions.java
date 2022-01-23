@@ -21,4 +21,10 @@ public class SuppressedExceptions {
         }
     }
 
+    // suppressed exception - in cadrul unei metode exista un lant de exceptii:
+    // -> aruncam o exceptie
+    // -> prindem exceptia respectiva in aceeasi metoda
+    // -> in urma prinderii aruncam alta exceptie
+    // -> insa am rezolvat problema exceptiei anterioare
+
 }

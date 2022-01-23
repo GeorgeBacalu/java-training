@@ -35,4 +35,6 @@ public class CopyBinaryFiles {
             if (writer != null) writer.close();
         }
     }
+
+    // copiere de fisiere binare -> copiere bit cu bit vs. copierea unor secvente mai mare de memorie odata
 }

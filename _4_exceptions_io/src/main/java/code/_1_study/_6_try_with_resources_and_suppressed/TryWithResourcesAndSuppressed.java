@@ -22,4 +22,7 @@ public class TryWithResourcesAndSuppressed {
         }
     }
 
+    // un try care primeste ca parametru o resursa, o si inchide automat la finalul executiei -> implementeaza principiul autoclosable
+    // incepand cu java8 obiectele apartinand clasei throwable au disponibila metoda getSuppressed() care intercepteaza toate exceptiile amortizate
+
 }

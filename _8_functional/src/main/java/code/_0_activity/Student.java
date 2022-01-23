@@ -3,6 +3,10 @@ package code._0_activity;
 import java.util.Comparator;
 
 public class Student {
+    private int gradYear;
+    private double score;
+    private String firstName;
+
     public static Comparator<Student> byName = new Comparator<Student>() {
         @Override
         public int compare(Student o1, Student o2) {
@@ -16,10 +20,6 @@ public class Student {
             return o1.compareTo(o2);
         }
     };
-
-    int gradYear;
-    double score;
-    String firstName;
 
     public Student(int gradYear, double score) {
         this.gradYear = gradYear;

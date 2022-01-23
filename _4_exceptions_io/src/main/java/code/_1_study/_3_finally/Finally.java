@@ -14,12 +14,14 @@ public class Finally {
     public int test() { //what will this method return ?
         try {
             //throw new RuntimeException("something bad happened");
+            // incearca sa citesti fisierul X folosind canalDeComunicarePesteRetea
             return 0;
         } catch (Exception e) {
+            // trateaza cazul in care fisierul nu exista - aflu ca nu exista folosind canalDeComunicarePesteRetea
             return 1;
         } finally {
+            // dezalocam resursele folosite sau inchidem canalul de comunicare
             return 2;
         }
     }
-
 }

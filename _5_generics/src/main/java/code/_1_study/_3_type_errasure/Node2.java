@@ -5,4 +5,7 @@ public class Node2 extends Node<Integer> {
     void setData(Integer data) {
         super.setData(data);
     }
+
+    // mosteneste setData(java.lang.Object) si dupa, ca sa functioneze specializarea mea se genereaza o metoda sintetica pentru tipul de date setData(java.lang.Integer)
+    // -> partea de generice functioneaza fara batai de cap pentru cei ce folosesc limbajul
 }

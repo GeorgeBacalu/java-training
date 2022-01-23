@@ -11,7 +11,7 @@ public class Pawn {
         this.pieceColor = pieceColor;
     }
 
-    public ChessBoard getChesssBoard() {
+    public ChessBoard getChessBoard() {
         return chessBoard;
     }
 
@@ -44,7 +44,28 @@ public class Pawn {
     }
 
     public void Move(MovementType movementType, int newX, int newY) {
-        throw new UnsupportedOperationException("Need to implement Pawn.Move()");
+        /**
+         * Checks to see if the position of the pawn would be available and still in the same position on the x-axis (it can only move forward)
+         */
+        if (movementType == MovementType.MOVE && getChessBoard().IsLegalBoardPosition(newX, newY) && newX == getXCoordinate()) {
+            moveForward(getYCoordinate(), newY);
+        }
+    }
+
+    private void moveForward(int oldY, int newY) {
+        /**
+         * From its initial position, the pawn can be moved forward, either one or two positions, otherwise it can only move one
+         */
+        switch (getPieceColor()) {
+            case WHITE:
+                if (oldY == 1 && newY == oldY + 2) setYCoordinate(newY);
+                if (newY == oldY + 1) setYCoordinate(newY);
+                break;
+            case BLACK:
+                if(oldY == 6 && newY == oldY - 2) setYCoordinate(newY);
+                if(newY == oldY - 1) setYCoordinate(newY);
+                break;
+        }
     }
 
     @Override

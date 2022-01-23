@@ -35,4 +35,7 @@ public class CopyTextFiles {
             if (writer != null) writer.close();
         }
     }
+
+    // spre deosebire de FileReader si FileWriter, BufferedReader si BufferedWriter lucreaza cu fluxuri de caractere -> prin urmare nu se ia cate un caracter si se introduce in sir, ci un calup de caractere pe care le da mai departe
+    // -> faci mai putine drumuri prin canalul de comunicare intre partea de citire si cea de scriere
 }

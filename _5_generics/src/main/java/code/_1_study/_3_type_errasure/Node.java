@@ -7,4 +7,6 @@ public class Node<T> {
     void setData(T data) {
         this.data = data;
     }
+
+    // cand setData() este apelat se creeaza un field nou (putfield) care ii seteaza java/lang/Object, la fel ca si campul invokespecial
 }
